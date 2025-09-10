@@ -8,11 +8,22 @@
     */
 
     //Entrada
+    let cores = ["Branco", "Azul", "Marrom", "Cinza", "Verde", "Amarelo", "Vermelho", "Preto"];
 
+    let listaFinal = [];
 
     //Processamento
+    for(let itens of cores){
+        let coresFavoritas = prompt(`Você gosta da cor ${itens} (S - sim ou N - não)`).toUpperCase().trim();
+        if(coresFavoritas === "S"){
+            listaFinal.push(itens);
+        }
+    }
 
+    let quantidade = listaFinal.length;
 
     //Saída
+    document.write(`A lista de suas cores preferidas é: ${listaFinal.join(" - ")} <br>
+    Quantidade de itens da sua lista: ${quantidade}`);
 
 </script>
