@@ -9,17 +9,28 @@
 
     //Entrada
     let nomes = ["Hilário", "Rafaela", "José", "Bárbara", "Fábio", "Júlia"];
-
-    let listaNova = [];
-
-    //Processamento
-    for(let letra of nomes){
-        if(letra.includes()){
-            
+    let novosNomes = [];
+    for (item of nomes) {
+        let novo = item;
+        if (novo.indexOf(`á`) >= 0) {
+            novo = novo.replace(`á`, `a`);
+        }
+        if (novo.indexOf(`é`) >= 0) {
+            novo = novo.replace(`é`, `e`);
+        }
+        if (novo.indexOf(`í`) >= 0) {
+            novo = novo.replace(`í`, `i`);
+        }
+        if (novo.indexOf(`ó`) >= 0) {
+            novo = novo.replace(`ó`, `o`);
+        }
+        if (novo.indexOf(`ú`) >= 0) {
+            novo = novo.replace(`ú`, `u`);
         }
 
+        novosNomes.push(novo);
     }
-
     //Saída
+    document.write(`A lista de nomes corrigida é: ${novosNomes.join(" - ")}`)
 
 </script>
