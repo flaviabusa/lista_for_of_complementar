@@ -6,11 +6,27 @@
     */
 
     //Entrada
+    const palavra = prompt(`Informe uma palavra:`).toUpperCase().trim();
 
+    let vogais = [];
+    let consoantes = [];
 
     //Processamento
+    
+    let letras = Array.from(palavra);
 
+    for(let item of letras){
+        if(item === "A" || item === "E" || item === "I" || item === "O" || item === "U"){
+            vogais.push(item);
+        }
+        else{
+            consoantes.push(item);
+        }
+    }
+
+    let quantiVogais = vogais.length;
+    let quantiConsoantes = consoantes.length;
 
     //Saída
-
+    document.write(`A palavra ${palavra} tem ${quantiVogais} vogais e ${quantiConsoantes} consoantes.`);
 </script>

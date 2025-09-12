@@ -7,11 +7,18 @@
     */
 
     //Entrada
+    let bebidas = ["Cerveja", "Vinho", "Suco Natural", "Tequila", "Água", "Refrigerante", "Vodka"];
 
+    let semAlcool = [];
 
     //Processamento
-
+    for(let item of bebidas){
+        const possuiAlcool = prompt(`Informe se a bebida ${item} possui álcool: (S - sim ou N - não) `).toUpperCase().trim();
+        if(possuiAlcool === "N"){
+            semAlcool.push(item);
+        }
+    }
 
     //Saída
-
+    document.write(`As bebidas permitidas para menores de 18 anos são: ${semAlcool.join(" - ")}`);
 </script>

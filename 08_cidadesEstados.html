@@ -8,10 +8,56 @@
     */
 
     //Entrada
+    let cidades = ["Porto Alegre", "Curitiba", "Florianópolis", "Joinville", "Blumenau", "Gramado", "Santa Maria", "Londrina", "Itajaí"];
 
+    let listaPr = [];
+    let listaSc = [];
+    let listaRs = [];
 
     //Processamento
+    for(let item of cidades){
+        const estado = prompt(`A qual estado pertence a cidade ${item} pertence? PR - Paraná | SC - Santa Catarina | RS - Rio Grande do Sul`).toUpperCase().trim();
+        if(estado === "PR"){
+            listaPr.push(item);
+        }
+        else if (estado === "SC"){
+            listaSc.push(item);
+        }
+        else if (estado === "RS"){
+            listaRs.push(item);
+        }
+    }
 
+    if(listaSc.length >= listaRs.length && listaRs.length >= listaPr.length) {
+        document.write(`Cidades de SC: ${listaSc.join(", ")}<br>`);
+        document.write(`Cidades de RS: ${listaRs.join(", ")}<br>`);
+        document.write(`Cidades de PR: ${listaPr.join(", ")}<br>`);
+    }
+    else if (listaSc.length >= listaPr.length && listaPr.length >= listaRs.length){
+        document.write(`Cidades de SC: ${listaSc.join(", ")}<br>`);
+        document.write(`Cidades de PR: ${listaPr.join(", ")}<br>`);
+        document.write(`Cidades de RS: ${listaRs.join(", ")}<br>`);
+    }
+    else if(listaRs.length >= listaSc.length && listaSc.length >= listaPr.length){
+        document.write(`Cidades de RS: ${listaRs.join(", ")}<br>`);
+        document.write(`Cidades de SC: ${listaSc.join(", ")}<br>`);
+        document.write(`Cidades de PR: ${listaPr.join(", ")}<br>`);
+    }
+    else if(listaRs.length >= listaPr.length && listaPr.length >= listaSc.length){
+        document.write(`Cidades de RS: ${listaRs.join(", ")}<br>`);
+        document.write(`Cidades de PR: ${listaPr.join(", ")}<br>`);
+        document.write(`Cidades de SC: ${listaSc.join(", ")}<br>`);
+    }
+    else if(listaPr.length >= listaRs.length && listaRs.length >= listaSc.length){
+        document.write(`Cidades de PR: ${listaRs.join(", ")}<br>`);
+        document.write(`Cidades de RS: ${listaSc.join(", ")}<br>`);
+        document.write(`Cidades de SC: ${listaPr.join(", ")}<br>`);
+    }
+    else{
+        document.write(`Cidades de PR: ${listaRs.join(", ")}<br>`);
+        document.write(`Cidades de SC: ${listaSc.join(", ")}<br>`);
+        document.write(`Cidades de RS: ${listaPr.join(", ")}<br>`);
+    }
 
     //Saída
 
